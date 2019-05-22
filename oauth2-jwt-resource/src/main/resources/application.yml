@@ -1,0 +1,15 @@
+server:
+  port: 9100
+  ssl.key-store: classpath:microcop.jks
+  ssl.key-store-password: changeit
+  ssl.keyStoreType: PKCS12
+  ssl.keyAlias: microcop
+
+security:
+  jwt:
+    public-key: classpath:public.txt
+
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
