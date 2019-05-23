@@ -9,13 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 @RestController
-@RequestMapping("/me")
 public class UserController {
 
+    @RequestMapping("/au")
     @GetMapping
-    @PreAuthorize("hasRole('ROLE_USER')")
-    public ResponseEntity<Principal> get(final Principal principal) {
+    @PreAuthorize("hasRole('ROLE_AU')")
+    public ResponseEntity<Principal> getAu(final Principal principal) {
         return ResponseEntity.ok(principal);
     }
 
+    @GetMapping
+    @RequestMapping("/amazon")
+    @PreAuthorize("hasRole('ROLE_AMAZON')")
+    public ResponseEntity<Principal> getAmaznToken(final Principal principal) {
+        return ResponseEntity.ok(principal);
+    }
 }
