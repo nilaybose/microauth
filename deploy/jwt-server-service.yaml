@@ -10,5 +10,5 @@ spec:
   selector:
     app: jwt-server-v1
   ports:
-    - port: 80
+    - port: 443
       targetPort: 9002
