@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: jwt-server-service
+  labels:
+    app: jwt-server-v1
+    env: prod
+spec:
+  type: LoadBalancer
+  selector:
+    app: jwt-server-v1
+  ports:
+    - port: 80
+      targetPort: 9002

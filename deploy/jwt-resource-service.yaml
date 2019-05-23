@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: resource-v1-service
+  labels:
+    app: jwt-resource-v1
+    env: prod
+spec:
+  type: LoadBalancer
+  selector:
+    app: jwt-resource-v1
+  ports:
+    - port: 80
+      targetPort: 9100

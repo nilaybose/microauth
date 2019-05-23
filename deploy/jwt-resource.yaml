@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: resource-v1
+spec:
+  replicas: 2
+  template: 
+    metadata:
+      labels:
+        app: resource-v1
+    spec:
+      containers:
+      - name: jwt-resource-container
+        image: mjzhang88/oauth2-jwt-resource
+        volumeMounts:
+        ports:
+        - containerPort: 9100
+
